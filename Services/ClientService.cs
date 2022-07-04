@@ -32,7 +32,7 @@ namespace RefactoringTest.Services
                 client.HasCreditLimit = false;
                 client.CreditLimit = default;
             }
-            else if(client.Name=="ImportantClient")
+            else if (client.Name == "ImportantClient")
             {
                 client.HasCreditLimit = true;
                 client.CreditLimit = await _clientCreditService.GetCreditLimit(client) * 2;
@@ -40,7 +40,7 @@ namespace RefactoringTest.Services
             else
             {
                 client.HasCreditLimit = true;
-                client.CreditLimit = await _clientCreditService.GetCreditLimit(client) ;
+                client.CreditLimit = await _clientCreditService.GetCreditLimit(client);
             }
 
 
@@ -49,7 +49,7 @@ namespace RefactoringTest.Services
             return true;
         }
 
-        public Task<List<Client>> GetClients()
+        public List<Client> GetClients()
         {
             return _clientRepository.GetClients();
         }

@@ -4,7 +4,7 @@ namespace RefactoringTest.Repositories
 {
     public interface IClientRepository
     {
-        Task<List<Client>> GetClients();
+        List<Client> GetClients();
         Task AddClient(Client client);
     }
 }

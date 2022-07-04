@@ -4,7 +4,7 @@ namespace RefactoringTest.Services
 {
     public interface IClientService
     {
-        Task<List<Client>> GetClients();
+        List<Client> GetClients();
         Task<bool> AddClient(Client client);
     }
 }

@@ -17,7 +17,7 @@ namespace RefactoringTest.Repositories
             await _appDbContext.SaveChangesAsync();
         }
 
-        public async Task<List<Client>> GetClients()
+        public List<Client> GetClients()
         {
             return _appDbContext.Clients.ToList();
         }

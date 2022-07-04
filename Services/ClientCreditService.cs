@@ -4,16 +4,24 @@ namespace RefactoringTest.Services
 {
     public class ClientCreditService
     {
-
-        public async Task<int> GetCreditLimit(Client client)
+        public Task<int> GetCreditLimit(Client client)
         {
             if (client.Age < 21)
             {
-                return 10;
+                return Task.FromResult(10);
             }
-            else if (client.Age < 35) return 20;
-            else if (client.Age < 65) return 30;
-            else return 5;
+            else if (client.Age < 35)
+            {
+                return Task.FromResult(20);
+            }
+            else if (client.Age < 65)
+            {
+                return Task.FromResult(30);
+            }
+            else
+            {
+                return Task.FromResult(5);
+            }
         }
     }
 }

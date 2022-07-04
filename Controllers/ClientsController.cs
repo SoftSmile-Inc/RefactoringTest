@@ -16,9 +16,9 @@ namespace RefactoringTest.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<Client>>> Get()
+        public ActionResult<List<Client>> Get()
         {
-            return await _clientService.GetClients();
+            return _clientService.GetClients();
         }
 
 
@@ -30,8 +30,10 @@ namespace RefactoringTest.Controllers
             {
                 return Ok();
             }
-            else return BadRequest();
-
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }
